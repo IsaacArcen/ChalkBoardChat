@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ChalkBoardChat.BLL/ChalkBoardChat.BLL.csproj" />
+  <Project Path="ChalkBoardChat.DAL/ChalkBoardChat.DAL.csproj" />
+  <Project Path="ChalkBoardChat.UI/ChalkBoardChat.UI.csproj" />
+</Solution>
