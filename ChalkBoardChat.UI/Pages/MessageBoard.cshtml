@@ -6,6 +6,27 @@
 @{
 }
 
+<div class="mb-3">
+    <a asp-area="Identity"
+           asp-page="/Account/Manage/Index"
+           class="btn btn-secondary">
+        Manage Account
+    </a>
+
+    <a asp-area="Identity"
+           asp-page="/Account/Manage/ChangePassword"
+           class="btn btn-warning">
+        Change Password
+    </a>
+
+    <a asp-area="Identity"
+           asp-page="/Account/Logout"
+           class="btn btn-danger">
+        Logout
+    </a>
+</div>
+
+
 <h2>Message Board</h2>
 
 <form method="post">
