@@ -1,0 +1,35 @@
+﻿@page
+@model MessageBoardModel
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+
+@{
+}
+
+<h2>Message Board</h2>
+
+<form method="post">
+    <textarea asp-for="NewMessage" class="form-control"></textarea>
+    <button type="submit" class="btnPrimary">Post</button>
+</form>
+
+<hr />
+
+@{
+    var currentUserId = UserManager.GetUserId(User);
+}
+
+@foreach (var message in Model.Messages)
+{
+    var isOwn = message.UserId == currentUserId;
+    var user = await UserManager.FindByIdAsync(message.UserId);
+    var username = user != null ? user.UserName : "(deleted user)";
+
+    <div class="card mb-2 @(isOwn ? "bg-light" : "")">
+        <div class="card-body">
+            <strong>@username</strong>
+            <p>@message.Content</p>
+            <small>@message.Date.ToLocalTime()</small>
+        </div>
+    </div>
+}
