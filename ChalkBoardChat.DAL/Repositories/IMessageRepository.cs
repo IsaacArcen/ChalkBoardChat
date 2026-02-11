@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ChalkBoardChat.DAL.Repositories
 {
-    internal interface IMessageRepository
+    public interface IMessageRepository
     {
-        Task AddAsyc(Message message);
+        Task AddAsync(Message message);
         Task<List<Message>> GetAllAsync();
         Task<Message> GetByIdAsync(int id);
         Task SaveChangesAsync();

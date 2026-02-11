@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ChalkBoardChat.BLL.DTOs;
+using ChalkBoardChat.DAL.Entities;
+using ChalkBoardChat.DAL.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -16,7 +19,8 @@ namespace ChalkBoardChat.BLL.Services
 
         public async Task<List<MessageDto>> GetAllMessagesAsync()
         {
-            var messages = await _repository.GetAllMessagesAsync();
+            var messages = await _repository.GetAllAsync();
+
             
             
             var sorted = messages

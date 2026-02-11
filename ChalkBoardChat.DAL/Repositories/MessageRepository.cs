@@ -16,7 +16,7 @@ namespace ChalkBoardChat.DAL.Repositories
             _context = context;
         }
 
-        public async Task AddAsyc(Message message)
+        public async Task AddAsync(Message message)
         {
             await _context.Messages.AddAsync(message);
         }
